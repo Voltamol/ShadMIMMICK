@@ -71,20 +71,20 @@ class _ProductCardState extends State<ProductCard> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Wrap(crossAxisAlignment: WrapCrossAlignment.end, children: [
-                    const Text("\$", style: TextStyle(fontSize: 8)),
-                    Text(
-                      widget.content,
-                    ),
-                  ]),
+                  Text(
+                    widget.content,
+                  ),
                   const SizedBox(
                     width: 125,
                   ),
-                  GestureDetector(
-                    onTap: toggleLiked,
-                    child: Icon(
-                      _liked ? RadixIcons.heartFilled : RadixIcons.heart,
-                      color: _liked ? Colors.red : Colors.black,
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: toggleLiked,
+                      child: Icon(
+                        _liked ? RadixIcons.heartFilled : RadixIcons.heart,
+                        color: _liked ? Colors.red : Colors.black,
+                      ),
                     ),
                   )
                 ],
