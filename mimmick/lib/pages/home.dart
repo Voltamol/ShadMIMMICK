@@ -1,4 +1,4 @@
-import 'package:mimmick/components/custom_tile/more_info.dart';
+import 'package:mimmick/components/cards/product_card.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
 
 class Home extends StatelessWidget {
@@ -6,17 +6,15 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       child: Center(
         child: SizedBox(
-          width: 390,
-          child: CustomTile(
-            title: "JACKSON SCOTT",
-            content: "Balance:\$99.56",
-            foreColor:Colors.white,
-            tileColor:Colors.indigo[400],
-          ),
-        ),
+            width: 320,
+            child: ProductCard(
+              title: "NIKE Sweat-absorbing running T-shirt",
+              content: "80.10",
+              liked: true,
+            )),
       ),
     );
   }
