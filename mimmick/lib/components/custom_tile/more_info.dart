@@ -5,14 +5,18 @@ class CustomTile extends StatelessWidget {
     super.key,
     required this.title,
     required this.content,
+    required this.foreColor,
+    required this.tileColor,
   });
   final String title;
   final String content;
+  final Color tileColor;
+  final Color foreColor;
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.indigo[400],
+        color: tileColor,
         borderRadius: BorderRadius.circular(5),
       ),
       padding: const EdgeInsets.all(24),
@@ -28,8 +32,8 @@ class CustomTile extends StatelessWidget {
             children: [
               Text(
                 title,
-                style:const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: foreColor,
                   fontWeight: FontWeight.w800,
                 ),
               ),
@@ -38,8 +42,8 @@ class CustomTile extends StatelessWidget {
               ),
               Text(
                 content,
-                style:const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: foreColor,
                   fontSize: 12,
                 ),
               )
@@ -48,9 +52,9 @@ class CustomTile extends StatelessWidget {
           const SizedBox(
             width: 100,
           ),
-          const Icon(
+          Icon(
             RadixIcons.chevronRight,
-            color: Colors.white,
+            color: foreColor,
           )
         ],
       ),

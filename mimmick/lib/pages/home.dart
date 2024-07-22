@@ -6,13 +6,15 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       child: Center(
         child: SizedBox(
           width: 390,
           child: CustomTile(
             title: "JACKSON SCOTT",
             content: "Balance:\$99.56",
+            foreColor:Colors.white,
+            tileColor:Colors.indigo[400],
           ),
         ),
       ),
