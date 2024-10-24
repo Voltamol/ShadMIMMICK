@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+import 'package:lottie/lottie.dart';
 
 class Example extends StatefulWidget {
   @override
@@ -199,21 +200,46 @@ class BookMarkButton extends StatefulWidget {
   State<BookMarkButton> createState() => _BookMarkButtonState();
 }
 
-class _BookMarkButtonState extends State<BookMarkButton> {
+class _BookMarkButtonState extends State<BookMarkButton>
+    with SingleTickerProviderStateMixin {
   bool clicked = false;
+  late final AnimationController _controller;
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration:Duration(seconds:2),
+      vsync: this
+      );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
+
   void toggleIcon() {
-    setState(() {
-      clicked = !clicked;
-    });
+    if (clicked == false) {
+      _controller.forward();
+      clicked = true;
+    } else {
+      _controller.reverse();
+      clicked = false;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      onPressed: toggleIcon,
-      child: Icon(
-        clicked ? Icons.bookmark : Icons.bookmark_outline,
-      ),
-    );
+        backgroundColor: Colors.white,
+        onPressed: toggleIcon,
+        child: Lottie.network(
+            controller: _controller,
+            "https://lottie.host/4704735f-1448-4805-b81c-03470ad93069/4pH3Mt6Ad4.json")
+        // child: Icon(
+        //   //clicked ? Icons.bookmark : Icons.bookmark_outline,
+        // ),
+        );
   }
 }
