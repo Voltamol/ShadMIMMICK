@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-import 'package:animated_emoji/animated_emoji.dart';
 
 class Example extends StatefulWidget {
   @override
@@ -18,19 +17,23 @@ class _ExampleState extends State<Example> {
 
   final List<Widget> cards = [
     const ProfileCard(
-        title: "voltamol", age: 24, color: Colors.green, location: "Harare"),
-    Container(
-      alignment: Alignment.center,
-      child: const Text('2'),
-      decoration: BoxDecoration(
-          color: Colors.red, borderRadius: BorderRadius.circular(8)),
-    ),
-    Container(
-      alignment: Alignment.center,
-      child: const Text('3'),
-      decoration: BoxDecoration(
-          color: Colors.purple, borderRadius: BorderRadius.circular(8)),
-    ),
+        title: "voltamol",
+        age: 24,
+        color: Colors.pink,
+        location: "Harare",
+        image: "assets/images/team/team-1.jpg"),
+    const ProfileCard(
+        title: "voltamol",
+        age: 24,
+        color: Colors.pink,
+        location: "Harare",
+        image: "assets/images/team/team-2.jpg"),
+    const ProfileCard(
+        title: "voltamol",
+        age: 24,
+        color: Colors.pink,
+        location: "Harare",
+        image: "assets/images/team/team-3.jpg"),
   ];
 
   @override
@@ -105,62 +108,82 @@ class ProfileCard extends StatelessWidget {
   final String location;
   final int age;
   final color;
-  const ProfileCard({
-    super.key,
-    required this.title,
-    required this.location,
-    required this.age,
-    required this.color,
-  });
+  final String image;
+  const ProfileCard(
+      {super.key,
+      required this.title,
+      required this.location,
+      required this.age,
+      required this.color,
+      required this.image});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(5),
       alignment: Alignment.center,
       decoration:
-          BoxDecoration(color: color, borderRadius: BorderRadius.circular(8)),
+          BoxDecoration(color: color, borderRadius: BorderRadius.circular(16)),
       child: Stack(
         children: [
-          //image here
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-                child: Container(
-                  width: 300,
-                  height: 80,
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  decoration: BoxDecoration(
+          ClipRRect(
+            borderRadius:
+                BorderRadius.circular(16.0), // Set your desired border radius
+            child: Image.asset(
+              image,
+              fit: BoxFit
+                  .fitHeight, // Optional: ensure the image covers the area
+            ),
+          ),
+          Positioned(
+            bottom: 0, // Position the Column at the bottom of the Stack
+            left: 0,
+            right: 0,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0), // Adjust padding as needed
+              child: Column(
+                mainAxisSize: MainAxisSize.min, // Adjust to fit content
+                children: [
+                  Container(
+                    width: 300,
+                    height: 80,
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(8)),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("$title, ${age.toString()}",
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "$title, ${age.toString()}",
                           style: TextStyle(
-                              fontWeight: FontWeight.w800, fontSize: 24)),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Icon(
-                            Icons.location_pin,
-                            color: color,
+                            fontWeight: FontWeight.w800,
+                            fontSize: 24,
                           ),
-                          Text(
-                            location,
-                            style: TextStyle(fontSize: 18),
-                          ),
-                        ],
-                      )
-                    ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Icon(
+                              Icons.location_pin,
+                              color: color,
+                            ),
+                            Text(
+                              location,
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              )
-            ],
-          )
+                  const SizedBox(height: 10), // Space below the container
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );

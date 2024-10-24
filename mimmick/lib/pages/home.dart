@@ -26,7 +26,7 @@ class Home extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(height: 50),
-          SizedBox(height: 600, child: Example()),
+          SizedBox(height: 510, child: Example()),
         ],
       )
     ]));
