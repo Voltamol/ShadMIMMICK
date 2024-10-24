@@ -12,6 +12,7 @@ class Home extends StatelessWidget {
       Column(
         crossAxisAlignment:CrossAxisAlignment.center,
         children:[
+          SizedBox(height:20),
           UserType(),
           SizedBox(height:20),
            SizedBox(
@@ -21,7 +22,9 @@ class Home extends StatelessWidget {
               content: "80.10",
               liked: true,
             )
-           )
+           ),
+           SizedBox(height:20),
+           
         ]
       )
     
