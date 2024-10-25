@@ -8,27 +8,21 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-      // SizedBox(height:20),
-      // UserType(),
-      // SizedBox(height:20),
-      //  SizedBox(
-      //   width: 320,
-      //   child: ProductCardWithCta(
-      //     title: "NIKE Sweat-absorbing running T-shirt",
-      //     content: "80.10",
-      //     liked: true,
-      //   )
-      //  ),
-      //  SizedBox(height:20),
-      Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const SizedBox(height: 50),
-          SizedBox(height: 510, child: Example()),
-        ],
-      )
+      SizedBox(height:20),
+      UserType(),
+      SizedBox(height:20),
+       SizedBox(
+        width: 320,
+        child: ProductCardWithCta(
+          title: "NIKE Sweat-absorbing running T-shirt",
+          content: "80.10",
+          liked: true,
+        )
+       ),
+       SizedBox(height:20),
+      
     ]));
   }
 }
