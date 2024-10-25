@@ -1,5 +1,13 @@
-import 'package:mimmick/components/cards/product_card_utils.dart';
+import 'package:mimmick/components/layouts/widget-level/horizontal.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
+
+// ActivityTile(
+//           title: "ibuprofen",
+//           content: "after lunch",
+//           units: "mg",
+//           value: 10,
+//         )
+
 
 class ActivityTile extends StatelessWidget {
   final String title;
@@ -16,54 +24,32 @@ class ActivityTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      fillColor: Colors.blue.shade400,
-      filled: true,
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          const CardImage(
-            width: 40,
-            height: 30,
+    double height = 90;
+    double padding = 5;
+    return Container(
+      child: Layout12(children: [
+        SizedBox(
+          height: height,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: padding),
+            child: Placeholder(),
           ),
-          const SizedBox(
-            width: 15,
+        ),
+        SizedBox(
+          height: height,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: padding),
+            child: Placeholder(),
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style:
-                    const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              Text(content),
-            ],
+        ),
+        SizedBox(
+          height: height,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: padding),
+            child: Placeholder(),
           ),
-          const SizedBox(
-            width: 10,
-          ),
-          Container(
-            alignment: Alignment.center,
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(5)),
-            child: Column(
-              children: [
-                Text(value.toString(),
-                    style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.w700)),
-                Text(units),
-              ],
-            ),
-          )
-        ],
-      ),
-    ).intrinsic();
+        ),
+      ]),
+    );
   }
 }
