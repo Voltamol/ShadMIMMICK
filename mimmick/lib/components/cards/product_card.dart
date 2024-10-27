@@ -22,6 +22,7 @@ class ProductCard extends StatelessWidget {
           const CardImage(
             width: 100,
             height: 100,
+            source: "assets/images/img.jpeg",
           ),
           const SizedBox(
             width: 4,

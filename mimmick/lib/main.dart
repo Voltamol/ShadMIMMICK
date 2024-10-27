@@ -1,4 +1,5 @@
 import 'package:mimmick/pages/home.dart';
+import 'package:mimmick/pages/signup.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
 
 void main() {
@@ -13,9 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ShadcnApp(
       title: 'My App',
-      home: const Home(),
+      home: const Register(),
       theme: ThemeData(
-        colorScheme: ColorSchemes.lightGray(),
+        colorScheme: ColorSchemes.lightBlue(),
         radius: 0.5,
       ),
       debugShowCheckedModeBanner: false,

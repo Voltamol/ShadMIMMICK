@@ -1,4 +1,5 @@
 import 'package:shadcn_flutter/shadcn_flutter.dart';
+
 class CardSubtitle extends StatelessWidget {
   const CardSubtitle({
     super.key,
@@ -102,23 +103,24 @@ class CardTitle extends StatelessWidget {
 }
 
 class CardImage extends StatelessWidget {
-  const CardImage({
-    super.key,
-    required this.width,
-    required this.height,
-  });
+  const CardImage(
+      {super.key,
+      required this.width,
+      required this.height,
+      required this.source});
   final double width;
   final double height;
+  final String source;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: height,
       width: width,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(3),
+        borderRadius: BorderRadius.circular(5),
         child: Image.asset(
-          "assets/images/img.jpeg",
-          fit: BoxFit.cover,
+          source,
+          fit: BoxFit.fill,
         ),
       ),
     );
