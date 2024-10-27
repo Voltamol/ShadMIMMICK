@@ -8,15 +8,10 @@ class Layout4 extends StatelessWidget {
   final List<Widget> children;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Layout5(children: [
-          Layout1(children: [children[0], children[1]]),
-          Layout1(children: [children[2], children[3]])
-        ])
-      ],
-    );
+    return Layout5(children: [
+      Layout1(children: [children[0], children[1]]),
+      Layout1(children: [children[2], children[3]])
+    ]);
   }
 }
 
@@ -25,14 +20,9 @@ class Layout2 extends StatelessWidget {
   final List<Widget> children;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Layout5(children: [
-          Layout1(children: [children[0], children[1]]),
-          children[2],
-        ])
-      ],
-    );
+    return Layout5(children: [
+      Layout1(children: [children[0], children[1]]),
+      children[2],
+    ]);
   }
 }

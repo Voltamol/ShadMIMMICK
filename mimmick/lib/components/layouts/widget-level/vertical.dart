@@ -7,10 +7,8 @@ class Layout5 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Expanded(child: children[0]),
-        Expanded(child: children[1])
-    ],);
+      children: [Expanded(child: children[0]), Expanded(child: children[1])],
+    );
   }
 }
 
@@ -25,7 +23,8 @@ class Layout6 extends StatelessWidget {
         Expanded(child: children[0]),
         Expanded(child: children[1]),
         Expanded(child: children[2])
-    ],);
+      ],
+    );
   }
 }
 
@@ -37,10 +36,11 @@ class Layout9 extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Expanded(child: children[0]),
-        children[1],
-        children[2]
-    ],);
+        Expanded(flex: 2, child: children[0]),
+        Expanded(flex: 1, child: children[1]),
+        Expanded(flex: 1, child: children[2])
+      ],
+    );
   }
 }
 
@@ -52,9 +52,10 @@ class Layout10 extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Expanded(child: children[0]),
-        children[1],
-    ],);
+        Expanded(flex: 2, child: children[0]),
+        Expanded(flex: 1, child: children[1]),
+      ],
+    );
   }
 }
 
@@ -66,9 +67,9 @@ class Layout11 extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        children[0],
-        Expanded(child: children[1]),
-
-    ],);
+        Expanded(flex: 1, child: children[0]),
+        Expanded(flex: 2, child: children[1]),
+      ],
+    );
   }
 }
