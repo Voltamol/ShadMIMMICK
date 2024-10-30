@@ -34,8 +34,7 @@ class _RegisterState extends State<Register> {
           // ),
           SizedBox(
             height: 150,
-            child: Lottie.network(
-                "https://lottie.host/31358cf4-7a7e-44dd-bfa6-0f2006b12589/liZ8hdgH92.json"),
+            child: Lottie.asset("assets/json/lottie/doctor-app.json"),
           ),
           const SizedBox(
             height: 50,
@@ -77,13 +76,16 @@ class _RegisterState extends State<Register> {
           const SizedBox(
             height: 30,
           ),
-          PrimaryButton(
-            onPressed: () {},
-            child: SizedBox(
-              width: 340,
-              height: 30,
-              child: Center(
-                child: const SubTitle(text: "Sign Up"),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+            child: PrimaryButton(
+              onPressed: () {},
+              child: SizedBox(
+                width: 340,
+                height: 30,
+                child: Center(
+                  child: const SubTitle(text: "Sign Up"),
+                ),
               ),
             ),
           ),

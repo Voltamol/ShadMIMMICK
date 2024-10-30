@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ShadcnApp(
       title: 'My App',
-      home: const Register(),
+      home: const Home(),
       theme: ThemeData(
         colorScheme: ColorSchemes.lightBlue(),
         radius: 0.5,

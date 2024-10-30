@@ -1,10 +1,9 @@
-import 'package:mimmick/components/cimas/tiles/course.dart';
 import 'package:mimmick/components/cimas/timeline/basic.dart';
 import 'package:mimmick/components/images/logo.dart';
-import 'package:mimmick/components/layouts/widget-level/horizontal.dart';
-import 'package:mimmick/components/layouts/widget-level/vertical.dart';
+import 'package:mimmick/components/plus_one/forms/range-select.dart';
+import 'package:mimmick/components/plus_one/forms/text.dart';
+import 'package:mimmick/components/plus_one/surfaces/dialog.dart';
 import 'package:mimmick/components/text/headings.dart';
-import 'package:mimmick/components/cimas/tiles/cart.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
 
 class Home extends StatelessWidget {
@@ -15,34 +14,53 @@ class Home extends StatelessWidget {
     return Scaffold(
       child: Container(
         color: Colors.gray.withAlpha(30),
-        child: SingleChildScrollView(
+        child: const SingleChildScrollView(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              PageTitle(text: "Cimas"),
-              SubTitle(text: "Cimas"),
-              Logo(
-                source: "assets/images/img.jpeg",
-                sideLength: 90,
+              SizedBox(
+                height: 40,
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 5),
-                child: TextField(
-                  placeholder: 'Enter your name',
-                ),
+              CustomDialog(
+                children: [
+                  const Text(
+                      'Make changes to your profile here. Click save when you\'re done '),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  CustomTextField(title: "Specify Venue"),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: CustomRangeSelect(),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  //MultiSelect for languages
+                  const SizedBox(
+                    height: 16,
+                  ),
+
+                  // TextArea(
+                  //   placeholder:
+                  //       "other requirements eg(complexion(light,dark,neutral), structure(chubby,slender)), etc",
+                  // ),
+                  Flexible(
+                    child: CustomTextArea(
+                      placeholder: "other requirements",
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  CustomTextArea(
+                    title: "anything else?",
+                  )
+                ],
               ),
-              SecondaryButton(
-                onPressed: () {},
-                child: const Text('Secondary'),
-              ),
-              PrimaryButton(
-                onPressed: () {},
-                child: const Text('Primary'),
-              ),
-              // CartTile(),
-              // CourseTile(),
-              // CartTile(),
-              const BasicTimeLine()
             ],
           ),
         ),
