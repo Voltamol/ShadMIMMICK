@@ -1,5 +1,7 @@
 import 'package:mimmick/components/cimas/timeline/basic.dart';
 import 'package:mimmick/components/images/logo.dart';
+import 'package:mimmick/components/layouts/utils/calendar.dart';
+import 'package:mimmick/components/plus_one/forms/file-upload/upload_screenshot.dart';
 import 'package:mimmick/components/plus_one/forms/range-select.dart';
 import 'package:mimmick/components/plus_one/forms/text.dart';
 import 'package:mimmick/components/plus_one/surfaces/dialog.dart';
@@ -22,44 +24,7 @@ class Home extends StatelessWidget {
                 height: 40,
               ),
               CustomDialog(
-                children: [
-                  const Text(
-                      'Make changes to your profile here. Click save when you\'re done '),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  CustomTextField(title: "Specify Venue"),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: CustomRangeSelect(),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  //MultiSelect for languages
-                  const SizedBox(
-                    height: 16,
-                  ),
-
-                  // TextArea(
-                  //   placeholder:
-                  //       "other requirements eg(complexion(light,dark,neutral), structure(chubby,slender)), etc",
-                  // ),
-                  Flexible(
-                    child: CustomTextArea(
-                      placeholder: "other requirements",
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  CustomTextArea(
-                    title: "anything else?",
-                  )
-                ],
+                children: [Center(child: CustomCalendar())],
               ),
             ],
           ),

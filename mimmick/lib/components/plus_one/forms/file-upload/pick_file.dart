@@ -9,7 +9,10 @@ import 'package:http/http.dart' as http;
 void upload() async {
   
 // Select a file
-  FilePickerResult? result = await FilePicker.platform.pickFiles();
+  FilePickerResult? result = await FilePicker.platform.pickFiles(
+    type: FileType.custom,
+    allowedExtensions: ['jpg', 'jpeg', 'png','gif','heic'],
+  );
 
   if (result != null) {
     File file = File(result.files.single.path!);
