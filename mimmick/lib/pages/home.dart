@@ -1,12 +1,9 @@
-import 'package:mimmick/components/cimas/timeline/basic.dart';
-import 'package:mimmick/components/images/logo.dart';
-import 'package:mimmick/components/layouts/utils/calendar.dart';
-import 'package:mimmick/components/plus_one/forms/date-picker.dart';
-import 'package:mimmick/components/plus_one/forms/file-upload/upload_screenshot.dart';
-import 'package:mimmick/components/plus_one/forms/range-select.dart';
-import 'package:mimmick/components/plus_one/forms/text.dart';
-import 'package:mimmick/components/plus_one/surfaces/dialog.dart';
-import 'package:mimmick/components/text/headings.dart';
+import 'package:flutter/foundation.dart';
+import 'package:mimmick/components/feedback/circular-progress.dart';
+import 'package:mimmick/components/feedback/skeleton.dart';
+import 'package:mimmick/components/feedback/toast.dart';
+import 'package:mimmick/components/layouts/carousel.dart';
+import 'package:mimmick/components/plus_one/forms/stepper.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
 
 class Home extends StatelessWidget {
@@ -24,12 +21,13 @@ class Home extends StatelessWidget {
               SizedBox(
                 height: 40,
               ),
-              CustomDialog(
-                children: [
-                  //Center(child: CustomCalendar()),
-                  CustomDatePicker()
-                ],
-              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5),
+                child: CustomSkeleton(
+                    title: "Custom Skeleton",
+                    content: Text(
+                        "Lorem ipsum dolo sit amet, consectetor adipisizing elit")),
+              )
             ],
           ),
         ),
