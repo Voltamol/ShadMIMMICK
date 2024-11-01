@@ -31,8 +31,7 @@ Widget build(BuildContext context) {
                     controller.nextStep();
                   }),
             ],
-            child: const NumberedContainer(
-              index: 1,
+            child:Container(
               height: 200,
             ),
           );
@@ -55,8 +54,7 @@ Widget build(BuildContext context) {
                     controller.nextStep();
                   }),
             ],
-            child: const NumberedContainer(
-              index: 2,
+            child:Container(
               height: 200,
             ),
           );
@@ -79,8 +77,7 @@ Widget build(BuildContext context) {
                     controller.nextStep();
                   }),
             ],
-            child: const NumberedContainer(
-              index: 3,
+            child:Container(
               height: 200,
             ),
           );
