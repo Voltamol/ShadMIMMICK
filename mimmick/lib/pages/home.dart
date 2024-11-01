@@ -1,6 +1,7 @@
 import 'package:mimmick/components/cimas/timeline/basic.dart';
 import 'package:mimmick/components/images/logo.dart';
 import 'package:mimmick/components/layouts/utils/calendar.dart';
+import 'package:mimmick/components/plus_one/forms/date-picker.dart';
 import 'package:mimmick/components/plus_one/forms/file-upload/upload_screenshot.dart';
 import 'package:mimmick/components/plus_one/forms/range-select.dart';
 import 'package:mimmick/components/plus_one/forms/text.dart';
@@ -24,7 +25,10 @@ class Home extends StatelessWidget {
                 height: 40,
               ),
               CustomDialog(
-                children: [Center(child: CustomCalendar())],
+                children: [
+                  //Center(child: CustomCalendar()),
+                  CustomDatePicker()
+                ],
               ),
             ],
           ),

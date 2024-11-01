@@ -25,7 +25,7 @@ class CustomTile extends StatelessWidget {
         children: [
           Avatar(
             initials: Avatar.getInitials('sunarya-thito'),
-            photoUrl: 'https://avatars.githubusercontent.com/u/64018564?v=4',
+            //photoUrl: 'https://avatars.githubusercontent.com/u/64018564?v=4',
           ),
           Wrap(
             direction: Axis.vertical,

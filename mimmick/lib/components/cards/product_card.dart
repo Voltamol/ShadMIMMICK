@@ -19,11 +19,11 @@ class ProductCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          const CardImage(
-            width: 100,
-            height: 100,
-            source: "assets/images/img.jpeg",
-          ),
+          // const CardImage(
+          //   width: 100,
+          //   height: 100,
+          //   source: "assets/images/img.jpeg",
+          // ),
           const SizedBox(
             width: 4,
           ),
