@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:mimmick/components/feedback/alert-dialog.dart';
 import 'package:mimmick/components/forms/button.dart';
+import 'package:mimmick/components/forms/select.dart';
+import 'package:mimmick/components/forms/text.dart';
+import 'package:mimmick/components/plus_one/surfaces/dialog.dart';
 import 'package:mimmick/components/text/headings.dart';
 
 class SendRequestPage extends StatelessWidget {
@@ -23,7 +27,7 @@ class SendRequestPage extends StatelessWidget {
           const SizedBox(
             height: 8,
           ),
-          const CustomSubmitButton()
+          CustomSubmitButton(action: ()=>Navigator.pushNamed(context,"drafts/"))
         ],
       ),
     );

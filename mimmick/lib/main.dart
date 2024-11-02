@@ -1,3 +1,4 @@
+import 'package:mimmick/components/plus_one/pages/draft-request.dart';
 import 'package:mimmick/components/plus_one/pages/offers.dart';
 import 'package:mimmick/components/plus_one/pages/send-request.dart';
 import 'package:mimmick/pages/home.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         'signup/': (context) => const Register(),
         'offers/': (context) => const OffersPage(),
         'send-request/': (context) => const SendRequestPage(),
+        "drafts/": (context) => const DraftRequest(),
       },
       debugShowCheckedModeBanner: false,
     );

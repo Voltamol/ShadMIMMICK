@@ -1,4 +1,4 @@
-
+import 'package:mimmick/components/forms/button.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
 
 class CustomDialog extends StatelessWidget {
@@ -6,8 +6,8 @@ class CustomDialog extends StatelessWidget {
   final List<Widget> children;
   @override
   Widget build(BuildContext context) {
-    return PrimaryButton(
-      onPressed: () {
+    return CustomSubmitButton(
+      action: () {
         showDialog(
           context: context,
           builder: (context) {
@@ -21,7 +21,13 @@ class CustomDialog extends StatelessWidget {
               ),
               actions: [
                 PrimaryButton(
-                  child: const Text('Save changes'),
+                  child: const Text('submit request'),
+                  onPressed: () {
+                    Navigator.of(context).pop(controller.values);
+                  },
+                ),
+                SecondaryButton(
+                  child: const Text('save draft'),
                   onPressed: () {
                     Navigator.of(context).pop(controller.values);
                   },
@@ -31,7 +37,6 @@ class CustomDialog extends StatelessWidget {
           },
         );
       },
-      child: const Text('Edit Profile'),
     );
   }
 }
