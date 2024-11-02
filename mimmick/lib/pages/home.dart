@@ -5,7 +5,7 @@ import 'package:mimmick/components/feedback/circular-progress.dart';
 import 'package:mimmick/components/feedback/skeleton.dart';
 import 'package:mimmick/components/feedback/toast.dart';
 import 'package:mimmick/components/layouts/carousel.dart';
-import 'package:mimmick/components/plus_one/forms/stepper.dart';
+import 'package:mimmick/components/forms/stepper.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});

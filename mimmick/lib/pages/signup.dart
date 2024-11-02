@@ -90,6 +90,7 @@ class _RegisterState extends State<Register> {
               ),
             ),
           ),
+          
           Padding(
             padding: EdgeInsets.symmetric(
                 horizontal: horizontalPadding, vertical: 10),
