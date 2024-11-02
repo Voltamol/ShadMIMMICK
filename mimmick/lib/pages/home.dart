@@ -1,10 +1,11 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:mimmick/components/cards/swiper-card.dart';
 import 'package:mimmick/components/feedback/circular-progress.dart';
 import 'package:mimmick/components/feedback/skeleton.dart';
 import 'package:mimmick/components/feedback/toast.dart';
 import 'package:mimmick/components/layouts/carousel.dart';
 import 'package:mimmick/components/plus_one/forms/stepper.dart';
-import 'package:shadcn_flutter/shadcn_flutter.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -12,9 +13,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      child: Container(
-        color: Colors.gray.withAlpha(30),
-        child: const SingleChildScrollView(
+        body: const SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -27,11 +26,16 @@ class Home extends StatelessWidget {
                     title: "Custom Skeleton",
                     content: Text(
                         "Lorem ipsum dolo sit amet, consectetor adipisizing elit")),
-              )
+              ),
+              //CustomSwiperCard()
             ],
           ),
         ),
-      ),
-    );
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed('signup/');
+          },
+          child: const Icon(Icons.person_2_outlined),
+        ));
   }
 }

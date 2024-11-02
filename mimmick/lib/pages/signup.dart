@@ -1,5 +1,4 @@
 import 'package:lottie/lottie.dart';
-import 'package:mimmick/components/images/logo.dart';
 import 'package:mimmick/components/text/headings.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
 
@@ -79,7 +78,9 @@ class _RegisterState extends State<Register> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
             child: PrimaryButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed('offers/');
+              },
               child: SizedBox(
                 width: 340,
                 height: 30,

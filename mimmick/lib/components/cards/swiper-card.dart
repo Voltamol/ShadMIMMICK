@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+
 //height 510
-class Example extends StatefulWidget {
+class CustomSwiperCard extends StatefulWidget {
   @override
-  State<Example> createState() => _ExampleState();
+  State<CustomSwiperCard> createState() => _CustomSwiperCardState();
 }
 
-class _ExampleState extends State<Example> {
+class _CustomSwiperCardState extends State<CustomSwiperCard> {
   final CardSwiperController controller = CardSwiperController();
 
   @override
@@ -39,45 +41,51 @@ class _ExampleState extends State<Example> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Expanded(
-          // Replace Flexible with Expanded
-          child: CardSwiper(
-            controller: controller,
-            cardsCount: cards.length,
-            onSwipe: _onSwipe,
-            onUndo: _onUndo,
-            cardBuilder:
-                (context, index, percentThresholdX, percentThresholdY) =>
-                    cards[index],
+    return SizedBox(
+      height: 510,
+      child: Column(
+        children: [
+          Expanded(
+            // Replace Flexible with Expanded
+            child: CardSwiper(
+              controller: controller,
+              cardsCount: cards.length,
+              onSwipe: _onSwipe,
+              onUndo: _onUndo,
+              cardBuilder:
+                  (context, index, percentThresholdX, percentThresholdY) =>
+                      cards[index],
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              FloatingActionButton(
-                  onPressed: () => controller.swipe(CardSwiperDirection.left),
-                  child: const Icon(
-                    Icons.cancel_outlined,
-                    color: Colors.red,
-                  )),
-              const SizedBox(
-                width: 10,
-              ),
-              const BookMarkButton(),
-              const SizedBox(
-                width: 10,
-              ),
-              FloatingActionButton(
-                  onPressed: () => controller.swipe(CardSwiperDirection.right),
-                  child: const Icon(Icons.favorite_outline)),
-            ], // Added this closing bracket
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                FloatingActionButton(
+                    backgroundColor: Colors.white,
+                    onPressed: () => controller.swipe(CardSwiperDirection.left),
+                    child: const Icon(
+                      Icons.clear,
+                      color: Colors.red,
+                    )),
+                const SizedBox(
+                  width: 10,
+                ),
+                const BookMarkButton(),
+                const SizedBox(
+                  width: 10,
+                ),
+                FloatingActionButton(
+                    backgroundColor: Colors.white,
+                    onPressed: () =>
+                        controller.swipe(CardSwiperDirection.right),
+                    child: const Icon(Icons.favorite_outline)),
+              ], // Added this closing bracket
+            ), // Added this closing bracket
           ), // Added this closing bracket
-        ), // Added this closing bracket
-      ],
+        ],
+      ),
     );
   }
 
@@ -159,7 +167,7 @@ class ProfileCard extends StatelessWidget {
                       children: [
                         Text(
                           "$title, ${age.toString()}",
-                          style: TextStyle(
+                          style: GoogleFonts.itim(
                             fontWeight: FontWeight.w800,
                             fontSize: 24,
                           ),
@@ -173,7 +181,7 @@ class ProfileCard extends StatelessWidget {
                             ),
                             Text(
                               location,
-                              style: TextStyle(fontSize: 18),
+                              style: GoogleFonts.itim(fontSize: 18),
                             ),
                           ],
                         ),
@@ -207,10 +215,8 @@ class _BookMarkButtonState extends State<BookMarkButton>
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
-      duration:Duration(seconds:2),
-      vsync: this
-      );
+    _controller =
+        AnimationController(duration: Duration(seconds: 2), vsync: this);
   }
 
   @override
@@ -234,9 +240,10 @@ class _BookMarkButtonState extends State<BookMarkButton>
     return FloatingActionButton(
         backgroundColor: Colors.white,
         onPressed: toggleIcon,
-        child: Lottie.network(
-            controller: _controller,
-            "https://lottie.host/4704735f-1448-4805-b81c-03470ad93069/4pH3Mt6Ad4.json")
+        child: Lottie.asset(
+          "assets/json/lottie/bookmark.json",
+          controller: _controller,
+        )
         // child: Icon(
         //   //clicked ? Icons.bookmark : Icons.bookmark_outline,
         // ),
