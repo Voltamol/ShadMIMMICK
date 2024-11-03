@@ -2,9 +2,16 @@ import 'package:mimmick/components/forms/select.dart';
 import 'package:mimmick/components/forms/text.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
 
-class CustomStepper extends StatelessWidget {
-  CustomStepper({super.key});
-
+class PlusOneStepper extends StatelessWidget {
+  PlusOneStepper({
+    super.key,
+    required this.children1,
+    required this.children2,
+    required this.children3,
+  });
+  final List<Widget> children1;
+  final List<Widget> children2;
+  final List<Widget> children3;
   final StepperController controller = StepperController();
 
   @override
@@ -27,26 +34,8 @@ class CustomStepper extends StatelessWidget {
                       controller.nextStep();
                     }),
               ],
-              child: const Column(
-                children: [
-                  Row(
-                    children: [
-                      Expanded(child: CustomSelect()),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  CustomTextArea(
-                    placeholder: "describe event",
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  CustomTextArea(
-                    placeholder: "venue",
-                  ),
-                ],
+              child: Column(
+                children: children1
               ),
             );
           },
@@ -68,22 +57,8 @@ class CustomStepper extends StatelessWidget {
                         controller.nextStep();
                       }),
                 ],
-                child: const Column(
-                  children: [
-                    Row(
-                      children: [
-                        Expanded(child: CustomSelect()),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(child: CustomSelect()),
-                      ],
-                    ),
-                  ],
+                child: Column(
+                  children: children2
                 ));
           },
         ),
@@ -104,13 +79,8 @@ class CustomStepper extends StatelessWidget {
                         controller.nextStep();
                       }),
                 ],
-                child: const Column(
-                  children: [
-                    CustomNumberField(
-                      placeholder: "\$:",
-                      title: "set your fee",
-                    )
-                  ],
+                child:Column(
+                  children: children3
                 ));
           },
         ),

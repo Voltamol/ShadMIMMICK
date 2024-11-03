@@ -14,17 +14,7 @@ class DraftRequest extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              children: [
-                Expanded(child: CustomSelect()),
-              ],
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            CustomTextArea(
-              placeholder: "venue",
-            ),
+            
             SizedBox(
               height: 5,
             ),
@@ -36,9 +26,7 @@ class DraftRequest extends StatelessWidget {
             SizedBox(
               height: 5,
             ),
-            CustomTextArea(
-              placeholder: "describe event",
-            ),
+            
             SizedBox(
               height: 5,
             ),

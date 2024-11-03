@@ -3,7 +3,9 @@ import 'package:lottie/lottie.dart';
 import 'package:mimmick/components/feedback/alert-dialog.dart';
 import 'package:mimmick/components/forms/button.dart';
 import 'package:mimmick/components/forms/select.dart';
+import 'package:mimmick/components/forms/stepper.dart';
 import 'package:mimmick/components/forms/text.dart';
+import 'package:mimmick/components/plus_one/forms/stepper.dart';
 import 'package:mimmick/components/plus_one/surfaces/dialog.dart';
 import 'package:mimmick/components/text/headings.dart';
 
@@ -27,7 +29,48 @@ class SendRequestPage extends StatelessWidget {
           const SizedBox(
             height: 8,
           ),
-          CustomSubmitButton(action: ()=>Navigator.pushNamed(context,"drafts/"))
+          CustomDialog(children: [
+            PlusOneStepper(
+              children1:const [
+                  Row(
+                    children: [
+                      Expanded(child: CustomSelect()),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  CustomTextArea(
+                    placeholder: "describe event",
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  CustomTextArea(
+                    placeholder: "venue",
+                  ),
+                ], children2:const [
+                    Row(
+                      children: [
+                        Expanded(child: CustomSelect()),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      children: [
+                        Expanded(child: CustomSelect()),
+                      ],
+                    ),
+                  ], children3:const [
+                    CustomNumberField(
+                      placeholder: "\$:",
+                      title: "set your fee",
+                    )
+                  ],
+            )
+          ],)
         ],
       ),
     );

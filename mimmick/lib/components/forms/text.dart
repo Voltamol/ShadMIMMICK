@@ -30,6 +30,37 @@ class CustomTextArea extends StatelessWidget {
   }
 }
 
+class CustomNumberField extends StatelessWidget {
+  const CustomNumberField({
+    super.key,
+    this.placeholder = "",
+    this.title = "",
+  });
+  final String? placeholder;
+  final String? title;
+  @override
+  Widget build(BuildContext context) {
+    final fieldController = TextEditingController();
+    return (title == "")
+        ? TextField(
+            placeholder: placeholder!,
+            controller: fieldController,
+            keyboardType: TextInputType.numberWithOptions(),
+          )
+        : Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Text(title!),
+            ),
+            TextField(
+              placeholder: placeholder!,
+              controller: fieldController,
+              keyboardType: TextInputType.numberWithOptions(),
+            ),
+          ]);
+  }
+}
+
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,

@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'My App',
       home: const SendRequestPage(),
       theme: ThemeData(
-        colorScheme: ColorSchemes.lightBlue(),
+        colorScheme: ColorSchemes.lightRose(),
         radius: 0.5,
       ),
       routes: {
