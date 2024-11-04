@@ -1,6 +1,6 @@
-import 'package:mimmick/components/plus_one/pages/draft-request.dart';
-import 'package:mimmick/components/plus_one/pages/offers.dart';
-import 'package:mimmick/components/plus_one/pages/send-request.dart';
+import 'package:mimmick/components/plus_one/pages/user/draft-request.dart';
+import 'package:mimmick/components/plus_one/pages/user/offers.dart';
+import 'package:mimmick/components/plus_one/pages/user/send_request.dart';
 import 'package:mimmick/pages/home.dart';
 import 'package:mimmick/pages/signup.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
