@@ -13,47 +13,46 @@ class _CustomCarouselState extends State<CustomCarousel> {
   final CarouselController controller = CarouselController();
   @override
   Widget build(BuildContext context) {
-    return ScrollConfiguration(
-      behavior: ScrollConfiguration.of(context).copyWith(
-        dragDevices: {
-          PointerDeviceKind.touch,
-          PointerDeviceKind.mouse,
-        },
-      ),
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: IntrinsicHeight(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              for (int i = 0; i < 10; i++)
-                CardImage(
-                  backgroundColor: Colors.green,
-                  onPressed: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return const CustomAlertDialog(
-                          title: 'Card Image',
-                          content: 'You clicked on a card image.',
-                        );
-                      },
-                    );
-                  },
-                  image: SizedBox(
-                    height: 200,
-                    width: 150,
-                    child: Image.asset(
-                      'assets/images/img.jpeg',
-                    ),
-                  ),
-                  //title: Text('Card Number ${i + 1}'),
-                  //subtitle: const Text('Lorem ipsum dolor sit amet'),
-                ),
-            ],
-          ).gap(8),
-        ),
+    return SizedBox(
+      width: 800,
+      child: Row(
+        children: [
+          OutlineButton(
+              shape: ButtonShape.circle,
+              onPressed: () {
+                controller.animatePrevious(const Duration(milliseconds: 500));
+              },
+              child: const Icon(Icons.arrow_back)),
+          const Gap(24),
+          Expanded(
+            child: SizedBox(
+              height: 200,
+              child: Carousel(
+                // frameTransform: Carousel.fadingTransform,
+                //transition: const CarouselTransition.sliding(gap: 24),
+                controller: controller,
+                //sizeConstraint: const CarouselFixedConstraint(200),
+                autoplaySpeed: const Duration(seconds: 2),
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return Container(
+                    width: 40,
+                    height: 100,
+                    child: Image.asset("assets/images/team/team-3.jpg"),
+                  );
+                },
+                duration: const Duration(seconds: 1),
+              ),
+            ),
+          ),
+          const Gap(24),
+          OutlineButton(
+              shape: ButtonShape.circle,
+              onPressed: () {
+                controller.animateNext(const Duration(milliseconds: 500));
+              },
+              child: const Icon(Icons.arrow_forward)),
+        ],
       ),
     );
   }

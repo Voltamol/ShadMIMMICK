@@ -1,5 +1,6 @@
 import 'package:mimmick/components/plus_one/pages/user/draft-request.dart';
 import 'package:mimmick/components/plus_one/pages/user/offers.dart';
+import 'package:mimmick/components/plus_one/pages/user/profile.dart';
 import 'package:mimmick/components/plus_one/pages/user/send_request.dart';
 import 'package:mimmick/pages/home.dart';
 import 'package:mimmick/pages/signup.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ShadcnApp(
       title: 'My App',
-      home: const SendRequestPage(),
+      home: const ProfilePage(),
       theme: ThemeData(
         colorScheme: ColorSchemes.lightRose(),
         radius: 0.5,
