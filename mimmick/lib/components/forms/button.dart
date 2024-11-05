@@ -5,8 +5,10 @@ class CustomSubmitButton extends StatelessWidget {
   const CustomSubmitButton({
     super.key,
     required this.action,
+    this.text="Submit",
   });
   final action;
+  final String? text;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class CustomSubmitButton extends StatelessWidget {
           width: 340,
           height: 30,
           child: Center(
-            child: const SubTitle(text: "Draft A Request"),
+            child: Text(text!),
           ),
         ),
       ),

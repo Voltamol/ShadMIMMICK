@@ -2,20 +2,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PageTitle extends StatelessWidget {
-  const PageTitle({super.key, required this.text, this.color});
+  const PageTitle({super.key, required this.text, this.color,this.textAlign});
 
   final String text;
   final Color? color; // Change Colors? to Color?
-
+  final TextAlign? textAlign; // Change
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
+      textAlign:textAlign??TextAlign.start,
       style: TextStyle(
         fontSize: 32,
         fontWeight: FontWeight.w800,
-        color:
-            color ?? Theme.of(context).colorScheme.secondary, // Use ?? operator
+        color: color ??
+            Theme.of(context).colorScheme.secondary, // Use ?? operator
       ),
     );
   }

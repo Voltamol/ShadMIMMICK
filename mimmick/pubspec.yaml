@@ -116,6 +116,10 @@ flutter:
     - family: BootstrapIcons
       fonts:
         - asset: packages/shadcn_flutter/icons/BootstrapIcons.otf
+
+    - family: DancingScript
+      fonts:
+        - asset: fonts/DancingScript-VariableFont_wght.ttf
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
@@ -150,5 +154,6 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+  
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
