@@ -20,13 +20,13 @@ class _CustomCarouselState extends State<CustomCarousel> {
           OutlineButton(
               shape: ButtonShape.circle,
               onPressed: () {
-                controller.animatePrevious(const Duration(milliseconds: 500));
+                controller.animatePrevious(const Duration(milliseconds: 1500));
               },
               child: const Icon(Icons.arrow_back)),
-          const Gap(24),
+          const Gap(8),
           Expanded(
             child: SizedBox(
-              height: 200,
+              height: 300,
               child: Carousel(
                 // frameTransform: Carousel.fadingTransform,
                 //transition: const CarouselTransition.sliding(gap: 24),
@@ -36,16 +36,21 @@ class _CustomCarouselState extends State<CustomCarousel> {
                 itemCount: 5,
                 itemBuilder: (context, index) {
                   return Container(
-                    width: 40,
-                    height: 100,
-                    child: Image.asset("assets/images/team/team-3.jpg"),
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15),
+                      child: Image.asset(
+                        "assets/images/team/team-3.jpg",
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   );
                 },
                 duration: const Duration(seconds: 1),
               ),
             ),
           ),
-          const Gap(24),
+          const Gap(8),
           OutlineButton(
               shape: ButtonShape.circle,
               onPressed: () {

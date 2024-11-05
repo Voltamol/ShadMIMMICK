@@ -16,23 +16,23 @@ class CustomCurvedBottomNav extends StatelessWidget {
           color: Theme.of(context).colorScheme.primary,
         ),
         Icon(
+          BootstrapIcons.personRaisedHand,
+          size: 30,
+          color: Theme.of(context).colorScheme.primary,
+        ),
+        Icon(
           //BootstrapIcons.journal,
           BootstrapIcons.activity,
           size: 30,
           color: Theme.of(context).colorScheme.primary,
         ),
         Icon(
-          BootstrapIcons.bookmark,
-          size: 30,
-          color: Theme.of(context).colorScheme.primary,
-        ),
-        Icon(
-          BootstrapIcons.personRaisedHand,
-          size: 30,
-          color: Theme.of(context).colorScheme.primary,
-        ),
-        Icon(
           BootstrapIcons.person,
+          size: 30,
+          color: Theme.of(context).colorScheme.primary,
+        ),
+        Icon(
+          BootstrapIcons.bookmark,
           size: 30,
           color: Theme.of(context).colorScheme.primary,
         ),

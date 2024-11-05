@@ -1,16 +1,21 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class PageTitle extends StatelessWidget {
-  const PageTitle({super.key, required this.text});
+  const PageTitle({super.key, required this.text, this.color});
+
   final String text;
+  final Color? color; // Change Colors? to Color?
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: const TextStyle(
+      style: TextStyle(
         fontSize: 32,
         fontWeight: FontWeight.w800,
+        color:
+            color ?? Theme.of(context).colorScheme.secondary, // Use ?? operator
       ),
     );
   }
@@ -31,7 +36,6 @@ class PageSubTitle extends StatelessWidget {
     );
   }
 }
-
 
 class TileTitle extends StatelessWidget {
   const TileTitle({super.key, required this.text});
