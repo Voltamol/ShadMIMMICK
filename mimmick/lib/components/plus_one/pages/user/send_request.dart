@@ -17,7 +17,10 @@ class SendRequestPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Lottie.asset("assets/json/lottie/mail.json"),
-          const PageTitle(text: "Who's ready for a date"),
+          PageTitle(
+            text: "Who's ready for a date",
+            color: Theme.of(context).colorScheme.primary,
+          ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 50),
             child: SubTitle(
@@ -75,7 +78,22 @@ class SendRequestPage extends StatelessWidget {
           )
         ],
       ),
-      bottomNavigationBar: const CustomCurvedBottomNav(),
+      bottomNavigationBar: const CustomCurvedBottomNav(
+        navigationItems: [
+          JournalIcon(),
+          RaisedHandIcon(),
+          ActivityIcon(),
+          PersonIcon(),
+          BookmarkIcon(),
+        ],
+        indexRoutes: {
+          0:"send-request/",
+          1:"offers/",
+          2:"active-dates",
+          3:"profile/",
+          4:"bookmarks/",
+        },
+      ),
     );
   }
 }

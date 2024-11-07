@@ -56,7 +56,22 @@ class ProfilePage extends StatelessWidget {
         onPressed: () {},
         child: Icon(Icons.edit, color: Theme.of(context).colorScheme.primary),
       ),
-      bottomNavigationBar: const CustomCurvedBottomNav(),
+      bottomNavigationBar: const CustomCurvedBottomNav(
+        navigationItems: [
+          JournalIcon(),
+          RaisedHandIcon(),
+          ActivityIcon(),
+          PersonIcon(),
+          BookmarkIcon(),
+        ],
+        indexRoutes: {
+          0: "send-request/",
+          1: "offers/",
+          2: "active-dates",
+          3: "profile/",
+          4: "bookmarks/",
+        },
+      ),
     );
   }
 }

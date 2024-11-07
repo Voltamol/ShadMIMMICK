@@ -20,10 +20,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ShadcnApp(
       title: 'My App',
-      home: const ClientRequest(),
+      home: const SplashScreen(),
       theme: ThemeData(
         colorScheme: ColorSchemes.lightRose(),
-        
         radius: 0.5,
       ),
       routes: {

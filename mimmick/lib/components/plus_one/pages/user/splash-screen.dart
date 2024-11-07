@@ -34,8 +34,12 @@ class SplashScreen extends StatelessWidget {
         const SizedBox(
           height: 150,
         ),
-        CustomSubmitButton(action: () {},text:"Start Exploring"),
-        SizedBox(
+        CustomSubmitButton(
+            action: () {
+              Navigator.of(context).pushNamed("send-request/");
+            },
+            text: "Start Exploring"),
+        const SizedBox(
           height: 50,
         )
       ],

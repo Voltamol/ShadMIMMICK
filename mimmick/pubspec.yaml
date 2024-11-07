@@ -119,7 +119,7 @@ flutter:
 
     - family: DancingScript
       fonts:
-        - asset: fonts/DancingScript-VariableFont_wght.ttf
+        - asset: assets/fonts/DancingScript-VariableFont_wght.ttf
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
