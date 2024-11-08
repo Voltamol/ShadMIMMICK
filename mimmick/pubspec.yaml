@@ -47,6 +47,7 @@ dependencies:
   path: ^1.9.0
   google_fonts: ^6.2.1
   curved_navigation_bar: ^1.0.6
+  badges: ^3.1.2
 
 dev_dependencies:
   flutter_test:

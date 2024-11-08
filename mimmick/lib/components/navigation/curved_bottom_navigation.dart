@@ -3,23 +3,24 @@ import 'package:flutter/foundation.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
 
 class CustomCurvedBottomNav extends StatelessWidget {
-  const CustomCurvedBottomNav({
+  CustomCurvedBottomNav({
     super.key,
     required this.navigationItems,
     required this.indexRoutes,
+    this.index=0,
   });
   final List<Widget> navigationItems;
   final Map<int, String> indexRoutes;
+  final int index;
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
+      index: index,
       color: Theme.of(context).colorScheme.secondary,
       backgroundColor: Colors.transparent,
       items: navigationItems,
       onTap: (index) {
-        if (kDebugMode) {
-          print(indexRoutes[index]!);
-        }
+        
         Navigator.of(context).pushNamed(indexRoutes[index]!);
       },
     );

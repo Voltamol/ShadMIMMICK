@@ -22,7 +22,8 @@ class _CustomCarouselState extends State<CustomCarousel> {
               onPressed: () {
                 controller.animatePrevious(const Duration(milliseconds: 1500));
               },
-              child: const Icon(Icons.arrow_back)),
+              child: Icon(Icons.arrow_back,
+                  color: Theme.of(context).colorScheme.primary)),
           const Gap(8),
           Expanded(
             child: SizedBox(
@@ -56,7 +57,8 @@ class _CustomCarouselState extends State<CustomCarousel> {
               onPressed: () {
                 controller.animateNext(const Duration(milliseconds: 500));
               },
-              child: const Icon(Icons.arrow_forward)),
+              child: Icon(Icons.arrow_forward,
+                  color: Theme.of(context).colorScheme.primary)),
         ],
       ),
     );

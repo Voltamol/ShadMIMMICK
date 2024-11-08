@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mimmick/components/layouts/carousel.dart';
+import 'package:mimmick/components/navigation-drawer.dart';
 import 'package:mimmick/components/navigation/curved_bottom_navigation.dart';
 import 'package:mimmick/components/text/headings.dart';
+import 'package:badges/badges.dart' as badges;
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -11,8 +13,43 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.menu, color: Theme.of(context).colorScheme.primary),
+        foregroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor:
+            Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+        actions: const [
+          badges.Badge(
+            badgeContent: Text(
+              '3',
+              style: TextStyle(color: Colors.white),
+            ),
+            child: Icon(Icons.favorite_outline, size: 32),
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          badges.Badge(
+            badgeContent: Text(
+              '99',
+              style: TextStyle(color: Colors.white, fontSize: 12),
+            ),
+            child: Icon(Icons.notifications_outlined, size: 32),
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          badges.Badge(
+            badgeContent: Text(
+              '3',
+              style: TextStyle(color: Colors.white),
+            ),
+            child: Icon(Icons.people, size: 32),
+          ),
+          SizedBox(
+            width: 20,
+          ),
+        ],
       ),
+      drawer: CustomNavigationDrawer(),
       body: Column(
         //mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -56,18 +93,19 @@ class ProfilePage extends StatelessWidget {
         onPressed: () {},
         child: Icon(Icons.edit, color: Theme.of(context).colorScheme.primary),
       ),
-      bottomNavigationBar: const CustomCurvedBottomNav(
-        navigationItems: [
+      bottomNavigationBar: CustomCurvedBottomNav(
+        index: 3,
+        navigationItems: const [
           JournalIcon(),
           RaisedHandIcon(),
           ActivityIcon(),
           PersonIcon(),
           BookmarkIcon(),
         ],
-        indexRoutes: {
+        indexRoutes: const {
           0: "send-request/",
           1: "offers/",
-          2: "active-dates",
+          2: "active-dates/",
           3: "profile/",
           4: "bookmarks/",
         },

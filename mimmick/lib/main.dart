@@ -1,4 +1,8 @@
+import 'package:mimmick/components/plus_one/pages/test/tile-preview.dart';
+import 'package:mimmick/components/plus_one/pages/user/active_dates.dart';
+import 'package:mimmick/components/plus_one/pages/user/bookmarks.dart';
 import 'package:mimmick/components/plus_one/pages/user/request.dart';
+import 'package:mimmick/components/plus_one/pages/user/requests.dart';
 import 'package:mimmick/components/plus_one/pages/user/splash-screen.dart';
 import 'package:mimmick/components/plus_one/pages/user/draft-request.dart';
 import 'package:mimmick/components/plus_one/pages/user/offers.dart';
@@ -31,6 +35,11 @@ class MyApp extends StatelessWidget {
         'offers/': (context) => const OffersPage(),
         'send-request/': (context) => const SendRequestPage(),
         "drafts/": (context) => const DraftRequest(),
+        "profile/": (context) => const ProfilePage(),
+        "client-request/": (context) => const ClientRequest(),
+        "requests/": (context) => const RequestsPage(),
+        "bookmarks/": (context) => const BookmarksPage(),
+        "active-dates/": (context) => const ActiveDatesPage(),
       },
       debugShowCheckedModeBanner: false,
     );

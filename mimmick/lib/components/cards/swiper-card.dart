@@ -63,6 +63,7 @@ class _CustomSwiperCardState extends State<CustomSwiperCard> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 FloatingActionButton(
+                  heroTag: 'fab1', 
                     backgroundColor: Colors.white,
                     onPressed: () => controller.swipe(CardSwiperDirection.left),
                     child: const Icon(
@@ -77,6 +78,7 @@ class _CustomSwiperCardState extends State<CustomSwiperCard> {
                   width: 10,
                 ),
                 FloatingActionButton(
+                  heroTag: 'fab3', 
                     backgroundColor: Colors.white,
                     onPressed: () =>
                         controller.swipe(CardSwiperDirection.right),
@@ -238,6 +240,7 @@ class _BookMarkButtonState extends State<BookMarkButton>
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
+      heroTag: 'fab2', 
         backgroundColor: Colors.white,
         onPressed: toggleIcon,
         child: Lottie.asset(

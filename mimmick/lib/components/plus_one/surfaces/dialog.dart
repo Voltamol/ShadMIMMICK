@@ -2,11 +2,13 @@ import 'package:mimmick/components/forms/button.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
 
 class CustomDialog extends StatelessWidget {
-  const CustomDialog({super.key, required this.children});
+  const CustomDialog({super.key, required this.children, required this.title});
   final List<Widget> children;
+  final String title;
   @override
   Widget build(BuildContext context) {
     return CustomSubmitButton(
+      text: title,
       action: () {
         showDialog(
           context: context,
