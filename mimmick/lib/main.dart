@@ -11,8 +11,15 @@ import 'package:mimmick/components/plus_one/pages/user/send_request.dart';
 import 'package:mimmick/pages/home.dart';
 import 'package:mimmick/pages/signup.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  await Supabase.initialize(
+    url: "https://ewdlaupcjxsrzoxojxui.supabase.co",
+    anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV3ZGxhdXBjanhzcnpveG9qeHVpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzEwODg2NDksImV4cCI6MjA0NjY2NDY0OX0.7TiuF1Gs8oTUMSEMAT7hi99T46FLQtbgjqA0Q10RUcM",
+  );
   runApp(const MyApp());
 }
 
